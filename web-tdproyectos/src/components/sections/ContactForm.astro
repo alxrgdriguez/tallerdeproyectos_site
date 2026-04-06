@@ -1,264 +1,156 @@
 ---
-import ContactFormReact from "./ContactFormReact";
+
 ---
 
 <section
   id="contacto"
-  class="fade-in-up bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-16 px-6 md:px-12 lg:px-20"
+  class="fade-in-up relative overflow-hidden bg-[#f8f9fc] py-20 px-6 md:px-12 lg:px-20"
 >
-  <!-- Cabecera -->
-  <div class="max-w-7xl mx-auto text-center mb-8">
-    <div
-      class="inline-flex items-center bg-white/80 backdrop-blur-sm rounded-full px-6 py-2 mb-6 border border-white/50 shadow-sm"
-    >
-      <svg
-        class="w-5 h-5 text-blue-600 mr-2"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-        ></path>
-      </svg>
-      <span class="text-sm font-semibold text-blue-800"
-        >¿Tienes un proyecto en mente?</span
-      >
-    </div>
-
-    <h2
-      class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-4"
-    >
-      Estamos aquí para ayudarte
-    </h2>
-    <p
-      class="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed"
-    >
-      Completa el formulario o contáctanos directamente. Estamos disponibles
-      para resolver tus dudas, colaborar en proyectos o brindarte soluciones
-      personalizadas.
-    </p>
+  <!-- Fondo decorativo -->
+  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-blue-100/60 blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-20 w-[400px] h-[400px] rounded-full bg-cyan-100/50 blur-3xl"></div>
   </div>
 
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-    <!-- Formulario + Info -->
-    <div
-      class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 space-y-6 transition-all duration-300 hover:shadow-2xl flex flex-col"
-    >
-      <div class="space-y-4">
-        <div class="flex items-center mb-2">
-          <div
-            class="w-2 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full mr-3"
-          >
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">
-            Envíanos un mensaje
-          </h2>
-        </div>
-        <p class="text-gray-600 text-sm sm:text-base">
-          Rellena el formulario y nos pondremos en contacto contigo lo antes
-          posible (respuesta en menos de 24 horas hábiles).
-        </p>
+  <div class="relative max-w-7xl mx-auto">
+
+    <!-- Cabecera -->
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-white border border-blue-100 shadow-sm rounded-full px-5 py-2 mb-6">
+        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+        <span class="text-sm font-semibold text-blue-700 tracking-wide">¿Tienes un proyecto en mente?</span>
       </div>
-
-      <!-- FORMULARIO -->
-      <ContactFormReact client:load />
-
-      <!-- Contacto directo -->
-      <div class="border-t border-gray-200 pt-6 mt-6">
-        <h3 class="text-lg font-semibold text-gray-900 mb-5 flex items-center">
-          <svg
-            class="w-5 h-5 text-blue-600 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-            ></path>
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-          </svg>
-          Contacto directo
-        </h3>
-
-        <div class="space-y-4 text-sm sm:text-base">
-          <div
-            class="flex items-start p-4 bg-gradient-to-r from-blue-50 to-cyan-50/20 rounded-xl hover:bg-blue-50 transition-all duration-200 group"
-          >
-            <div
-              class="flex-shrink-0 mt-1 bg-blue-100 p-2 rounded-lg group-hover:bg-blue-200 transition-colors"
-            >
-              <svg
-                class="w-5 h-5 text-blue-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                ></path>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-            </div>
-            <div class="ml-3">
-              <p class="font-semibold text-gray-900">Dirección</p>
-              <p class="text-gray-700">
-                Avenida Andalucía, 16. 1º P5<br />04640 Pulpí, Almería
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="flex items-start p-4 bg-gradient-to-r from-blue-50 to-cyan-50/20 rounded-xl hover:bg-blue-50 transition-all duration-200 group"
-          >
-            <div
-              class="flex-shrink-0 mt-1 bg-blue-100 p-2 rounded-lg group-hover:bg-blue-200 transition-colors"
-            >
-              <svg
-                class="w-5 h-5 text-blue-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                ></path>
-              </svg>
-            </div>
-            <div class="ml-3">
-              <p class="font-semibold text-gray-900">Teléfono</p>
-              <a
-                href="tel:+34950465466"
-                class="text-blue-600 hover:text-blue-800 transition-colors font-medium flex items-center group-hover:underline"
-              >
-                +34 950 46 54 66
-                <svg
-                  class="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div
-            class="flex items-start p-4 bg-gradient-to-r from-blue-50 to-cyan-50/20 rounded-xl hover:bg-blue-50 transition-all duration-200 group"
-          >
-            <div
-              class="flex-shrink-0 mt-1 bg-blue-100 p-2 rounded-lg group-hover:bg-blue-200 transition-colors"
-            >
-              <svg
-                class="w-5 h-5 text-blue-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                ></path>
-              </svg>
-            </div>
-            <div class="ml-3">
-              <p class="font-semibold text-gray-900">Email</p>
-              <a
-                href="mailto:tallerdeproyectospulpi@gmail.com"
-                class="text-blue-600 hover:text-blue-800 transition-colors font-medium flex items-center group-hover:underline break-all"
-              >
-                tallerdeproyectospulpi@gmail.com
-                <svg
-                  class="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-4 leading-tight">
+        Estamos aquí<br class="hidden sm:block" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">para ayudarte</span>
+      </h2>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
+        Contáctanos directamente por teléfono o email. Respondemos en menos de <strong class="text-gray-700 font-semibold">24 horas hábiles</strong>.
+      </p>
     </div>
 
-    <!-- Mapa + Horario -->
-    <div class="flex flex-col space-y-6">
-      <!-- Mapa -->
-      <div
-        class="w-full h-[400px] md:h-[780px] rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl border-1"
-      >
-        <div class="relative w-full h-full">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.167754326049!2d-1.7488698228582977!3d37.40950963311473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd64d128fec4b15d%3A0x35a0dd48e9727a3b!2sTALLER%20DE%20PROYECTOS%20INGENIERIA%20Y%20DELINEACION%20SL!5e0!3m2!1ses!2ses!4v1753892962824!5m2!1ses!2ses"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            class="absolute inset-0 w-full h-full"
-            title="Ubicación de Taller de Proyectos SL en Pulpí, Almería"
-          ></iframe>
-          <div
-            class="absolute inset-0 pointer-events-none border-2 border-white/20 rounded-2xl"
-          >
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <!-- ── Columna izquierda: info de contacto + horario ── -->
+      <div class="flex flex-col gap-6">
+
+        <!-- Tarjetas de contacto -->
+        <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-8">
+          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">Contacto directo</h3>
+          <div class="space-y-4">
+
+            <!-- Dirección -->
+            <div class="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 hover:bg-blue-50 transition-colors duration-200 group">
+              <div class="w-11 h-11 bg-white rounded-xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors flex-shrink-0">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Dirección</p>
+                <p class="text-gray-800 font-medium leading-snug">Avenida Andalucía, 16. 1º P5<br />04640 Pulpí, Almería</p>
+              </div>
+            </div>
+
+            <!-- Teléfono -->
+            <a
+              href="tel:+34950465466"
+              class="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 hover:bg-blue-50 transition-colors duration-200 group"
+            >
+              <div class="w-11 h-11 bg-white rounded-xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors flex-shrink-0">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Teléfono</p>
+                <p class="text-blue-600 font-semibold text-lg group-hover:text-blue-800 transition-colors">+34 950 46 54 66</p>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <a
+              href="mailto:tallerdeproyectospulpi@gmail.com"
+              class="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 hover:bg-blue-50 transition-colors duration-200 group"
+            >
+              <div class="w-11 h-11 bg-white rounded-xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors flex-shrink-0">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Email</p>
+                <p class="text-blue-600 font-semibold group-hover:text-blue-800 transition-colors break-all">tallerdeproyectospulpi@gmail.com</p>
+              </div>
+            </a>
+
           </div>
-          <!-- Overlay decorativo -->
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"
-          >
+        </div>
+
+        <!-- Horario -->
+        <div class="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-7 shadow-lg text-white">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-lg">Horario de oficina</h4>
           </div>
+
+          <div class="space-y-3">
+            <div class="flex justify-between items-center py-3 border-b border-white/20">
+              <span class="text-sm font-medium text-blue-100">Lunes — Jueves</span>
+              <div class="text-right">
+                <span class="text-sm font-semibold text-white">9:00–14:00</span>
+                <span class="text-blue-200 mx-1">/</span>
+                <span class="text-sm font-semibold text-white">16:00–19:00</span>
+              </div>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-white/20">
+              <span class="text-sm font-medium text-blue-100">Viernes</span>
+              <span class="text-sm font-semibold text-white">9:00–14:00</span>
+            </div>
+            <div class="flex justify-between items-center py-3">
+              <span class="text-sm font-medium text-blue-100">Sábado — Domingo</span>
+              <span class="text-sm font-semibold text-white/50">Cerrado</span>
+            </div>
+          </div>
+
+          <div class="mt-5 flex items-center gap-2 bg-white/10 rounded-xl px-4 py-3">
+            <svg class="w-4 h-4 text-cyan-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <p class="text-xs text-cyan-100">Respuesta garantizada en menos de 24 h hábiles</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── Columna derecha: mapa ── -->
+      <div class="min-h-[500px] rounded-3xl overflow-hidden shadow-lg border border-gray-100 relative">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.167754326049!2d-1.7488698228582977!3d37.40950963311473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd64d128fec4b15d%3A0x35a0dd48e9727a3b!2sTALLER%20DE%20PROYECTOS%20INGENIERIA%20Y%20DELINEACION%20SL!5e0!3m2!1ses!2ses!4v1753892962824!5m2!1ses!2ses"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="absolute inset-0 w-full h-full"
+          title="Ubicación de Taller de Proyectos SL en Pulpí, Almería"
+        ></iframe>
+        <!-- Badge ubicación -->
+        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-2.5 shadow-md border border-white flex items-center gap-2 pointer-events-none">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
+          </span>
+          <span class="text-xs font-semibold text-gray-700">Pulpí, Almería</span>
         </div>
       </div>
 
-      <!-- Horario -->
-      <div
-        class="bg-gradient-to-r bg-blue-600 rounded-2xl p-6 shadow-xl text-white"
-      >
-        <h4 class="font-semibold text-lg mb-4 text-center">
-          Horario de oficina
-        </h4>
-        <div class="space-y-2 text-center text-sm">
-          <p>Lunes - Jueves: 9:00 - 14:00 / 16:00 - 19:00</p>
-          <p>Viernes: 9:00 - 14:00</p>
-          <p class="text-cyan-100 text-xs mt-1">Cerrado fines de semana</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>

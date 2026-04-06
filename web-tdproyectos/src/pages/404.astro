@@ -5,14 +5,12 @@ import Navbar from "../components/layout/Navbar.astro";
 import Footer from "../components/layout/Footer.astro";
 ---
 
-<BaseLayout title="Página no encontrada - Taller de Proyectos SL">
+<BaseLayout title="404 - Página no encontrada | Taller de Proyectos SL">
   <Fragment slot="header">
     <Navbar />
   </Fragment>
 
-  <section
-    class="h-screen relative flex flex-col items-center justify-center text-center overflow-hidden text-white"
-  >
+  <main class="relative isolate min-h-[100svh] overflow-hidden bg-slate-950 text-white">
     <!-- Video de fondo -->
     <video
       autoplay
@@ -20,60 +18,64 @@ import Footer from "../components/layout/Footer.astro";
       loop
       playsinline
       preload="metadata"
-      class="absolute inset-0 w-full h-full object-cover"
+      class="absolute inset-0 -z-20 h-full w-full object-cover"
       aria-hidden="true"
     >
       <source
         src="https://ik.imagekit.io/proyectostd/videos/video_Plano.mp4?updatedAt=1754215990237"
         type="video/mp4"
       />
-      Tu navegador no soporta el elemento de video.
     </video>
 
-    <!-- Overlay: más limpio y con gradiente para mejor contraste -->
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/60 to-gray-900/70"
-    >
-    </div>
+    <!-- Overlay oscuro -->
+    <div class="absolute inset-0 -z-10 bg-slate-950/70"></div>
 
-    <div class="relative z-10 max-w-2xl px-4" data-aos="fade-down">
-      <h1 class="text-7xl font-extrabold mb-6 drop-shadow-xl animate-pulse">
-        Página no encontrada
-      </h1>
-      <p class="text-2xl font-light mb-6">
-        Parece que te has desviado del plano principal.
-      </p>
-      <a
-        href="/"
-        class="group inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-blue-700 to-cyan-600 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 relative overflow-hidden animate-flicker"
-      >
-        <span class="relative z-10">🏠 Volver a la página principal</span>
-        <span
-          class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition duration-300"
-        ></span>
-      </a>
-    </div>
-  </section>
+    <!-- Gradientes decorativos -->
+    <div
+      class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_35%),radial-gradient(circle_at_bottom,rgba(37,99,235,0.22),transparent_40%)]"
+    ></div>
+
+    <!-- Contenido -->
+    <section class="mx-auto flex min-h-[100svh] max-w-7xl items-center px-6 py-24 sm:px-10">
+      <div class="max-w-3xl">
+        <p
+          class="mb-4 inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-sm font-medium tracking-wide text-cyan-200 backdrop-blur"
+        >
+          Error 404
+        </p>
+
+        <h1 class="text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+          Esta página no
+          <span class="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
+            aparece en el plano
+          </span>
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-base leading-7 text-slate-200 sm:text-lg">
+          La dirección que has visitado no existe, ha cambiado o ya no está disponible.
+          Pero no te preocupes: puedes volver al inicio en el botón de abajo.
+        </p>
+
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a
+            href="/"
+            class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-700 to-cyan-600 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-cyan-900/30 transition duration-300 hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+          >
+            Volver al inicio
+          </a>
+
+        </div>
+
+        <div class="mt-12 border-l border-white/15 pl-4 text-sm text-slate-300">
+          <p>
+            Consejo: revisa la URL o navega desde el menú principal para encontrar la sección que buscas.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <Fragment slot="footer">
     <Footer />
   </Fragment>
-
-  <style>
-    @keyframes flicker {
-      0%,
-      100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.85;
-      }
-      75% {
-        opacity: 0.95;
-      }
-    }
-    .animate-flicker {
-      animation: flicker 2s ease-in-out infinite;
-    }
-  </style>
 </BaseLayout>
