@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
-import SpinnerText from "./SpinnerText.tsx";
+import React, { useEffect, useRef, useState } from "react";
+import SpinnerText from "./SpinnerText";
 
-let hasLoadedOnce = false; // variable global simple, OK si no hay SSR
+let hasLoadedOnce = false;
 
 const LoadingWrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [showSpinner, setShowSpinner] = useState(!hasLoadedOnce);
-  const [contentVisible, setContentVisible] = useState(false);
+  const [contentVisible, setContentVisible] = useState(hasLoadedOnce);
   const timeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -17,32 +17,11 @@ const LoadingWrapper: React.FC<{ children: React.ReactNode }> = ({
       return;
     }
 
-    const minSpinnerTime = 1200;
-    const startTime = Date.now();
-
-    const onLoad = () => {
-      const elapsed = Date.now() - startTime;
-      const remaining = minSpinnerTime - elapsed;
-
-      if (remaining > 0) {
-        timeoutRef.current = window.setTimeout(() => {
-          setShowSpinner(false);
-          setContentVisible(true);
-          hasLoadedOnce = true;
-        }, remaining);
-      } else {
-        setShowSpinner(false);
-        setContentVisible(true);
-        hasLoadedOnce = true;
-      }
-    };
-
-    if (document.readyState === "complete") {
-      onLoad();
-    } else {
-      window.addEventListener("load", onLoad);
-      return () => window.removeEventListener("load", onLoad);
-    }
+    timeoutRef.current = window.setTimeout(() => {
+      setContentVisible(true);
+      setShowSpinner(false);
+      hasLoadedOnce = true;
+    }, 1200);
 
     return () => {
       if (timeoutRef.current) {
@@ -51,24 +30,15 @@ const LoadingWrapper: React.FC<{ children: React.ReactNode }> = ({
     };
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = showSpinner ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [showSpinner]);
-
   return (
     <>
       {showSpinner && <SpinnerText />}
       <div
         aria-busy={showSpinner}
-        data-loaded={contentVisible}
         style={{
           opacity: contentVisible ? 1 : 0,
-          transition: "opacity 0.4s ease-in-out", // un poco más lenta para suavizar
+          transition: "opacity 0.4s ease-in-out",
           minHeight: "100vh",
-          backgroundColor: "transparent", // sin fondo explícito
         }}
       >
         {children}

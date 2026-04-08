@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    scroll-padding-top: 100px;
-    background-color: white;
-    color: white;
-    font-family: "Poppins", sans-serif;
+html {
+  height: 100%;
+  scrollbar-gutter: stable;
+  scroll-padding-top: 100px;
+}
 
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: white;
 }
 
 #contacto {
