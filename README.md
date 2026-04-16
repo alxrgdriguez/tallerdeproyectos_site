@@ -31,21 +31,9 @@ Desarrollé una **plataforma moderna, rápida y segura** que refleja la profesio
 | Categoría | Tecnologías |
 |---------|-----------|
 | **Frontend** | Astro, React, Tailwind CSS, HTML5, JavaScript |
-| **Backend** | Node.js, Express, Zod (validación) |
-| **Base de datos** | Supabase (PostgreSQL) |
-| **Email** | Resend (envío de correos) |
 | **Hosting** | Vercel (frontend y serverless functions) |
 | **Seguridad** | ENV (encriptación de variables), CORS, rate limiting |
 | **DevOps** | Git, GitHub, CI/CD automático con Vercel |
-
----
-
-## 🔐 Seguridad y buenas prácticas
-
-- 🔒 Variables de entorno con [env]([https://dotenvx.com](https://dotenvx.com/docs/env-file))
-- 📬 Verificación por email antes de procesar mensajes
-- 🛡️ Validación de dominios (solo correos de España, no temporales)
-- 🚫 Rate limiting: 3 mensajes por IP y día
 
 ---
 
