@@ -21,12 +21,6 @@ Este es el sitio web oficial de **Taller de Proyectos SL**, un estudio de ingeni
 
 Desarrollé una **plataforma moderna, rápida y segura** que refleja la profesionalidad del estudio, con funcionalidades clave como:
 
-- ✅ Formulario de contacto con verificación por email
-- ✅ Validación avanzada (Zod, dominios españoles, no temporales)
-- ✅ Backend Express desplegado como Serverless Function en Vercel
-- ✅ Base de datos en Supabase con políticas de seguridad
-- ✅ Envío de correos con Resend
-- ✅ Limpieza automática de mensajes no verificados
 - ✅ Diseño responsive con Tailwind CSS
 - ✅ Página de resultado bonita y UX optimizada
 
